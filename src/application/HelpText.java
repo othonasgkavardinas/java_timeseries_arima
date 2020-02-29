@@ -29,7 +29,7 @@ public class HelpText {
 		userChoices.add("\tDone!");
 		userChoices.add("Modeling");
 		userChoices.add("\tSplit series");
-		userChoices.add("\tPlot ACF(Modeling)");
+		userChoices.add("\tPlot ACF (Modeling)");
 		userChoices.add("\tPlot PACF");
 		userChoices.add("\tNew ARIMA");
 		userChoices.add("\tLoad ARIMA");
