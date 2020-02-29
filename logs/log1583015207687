@@ -1,0 +1,20 @@
+0	Load file: C:\Users\JIJIFA\Desktop\Car_TEST.tsv
+1	Logarithm - Plot 1
+2	Change TimeSeries to this
+3	Load original TimeSeries
+4	ACF (32) - Plot 2
+5	Demean - Plot 3
+6	Change TimeSeries to this
+7	Seasonality - Plot 4
+8	TimeSeries without seasonality - Plot 5
+9	Change TimeSeries to this
+10	Differencing (1) - Plot 6
+11	Change TimeSeries to this
+12	Done preprocessing!
+13	Split series 80%
+14	New ARIMA model (1,1,1)
+15	Modeled vs unmodeled - Plot 7
+16	Model residuals - Plot 8
+17	ACF (35) of residuals - Plot 9
+18	Model validation (Pass) - Plot 10
+19	Model forecast - Plot 11
