@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"server","c":"RecordLoader","l":"constructObjects(ArrayList<String>)","url":"constructObjects(java.util.ArrayList)"},{"p":"server","c":"RecordLoader","l":"load(String, String, boolean, int)","url":"load(java.lang.String,java.lang.String,boolean,int)"}]

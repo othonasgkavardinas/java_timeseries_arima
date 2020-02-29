@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openFile" text="Load data" />
+                  <MenuItem fx:id="plotTimeSeriesMenuItem" disable="true" mnemonicParsing="false" onAction="#ts_plot" text="Plot TimeSeries" />
+                  <MenuItem fx:id="originalSeriesMenuItem" disable="true" mnemonicParsing="false" onAction="#loadOriginalTs" text="Load original" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
+            </items>
+          </Menu>
+            <Menu fx:id="preprocessingMenu" disable="true" mnemonicParsing="false" text="Preprocessing">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#ts_plotAcf" text="Plot ACF" />
+                  <MenuItem mnemonicParsing="false" onAction="#ts_plotLogarithm" text="Logarithm" />
+                  <MenuItem mnemonicParsing="false" onAction="#ts_plotDiff" text="Differencing" />
+                  <MenuItem mnemonicParsing="false" onAction="#ts_plotSeasonal" text="Seasonal Adjustment" />
+                  <MenuItem mnemonicParsing="false" onAction="#ts_plotDemean" text="Extra: Demean" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#done_preprocessing" text="Done!" />
+              </items>
+            </Menu>
+            <Menu fx:id="modelingMenu" disable="true" mnemonicParsing="false" onShowing="#setStep3OnModelingMenuShowing" text="Modeling">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#model_splitTs" text="Split series" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#trainingSet_plotAcf" text="Plot ACF" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#trainingSet_plotPacf" text="Plot PACF" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#model_createArima" text="New ARIMA" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#model_loadArima" text="Load ARIMA" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#model_deleteArima" text="Delete ARIMA" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#model_plot" text="Plot series" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#model_plotWithOriginal" text="Plot with original" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#model_plotResiduals" text="Plot residuals" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#model_plotAcfOfResiduals" text="Plot ACF of residuals" />
+               </items>
+            </Menu>
+            <Menu fx:id="forecastingMenu" disable="true" mnemonicParsing="false" onShowing="#setStep4OnForecastingMenuShowing" text="Forecasting">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#validate" text="Validation" />
+                  <MenuItem mnemonicParsing="false" onAction="#forecast" text="New forecast" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showHelp" text="Show manual" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="95.0" prefWidth="877.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="773.0" layoutY="33.0" mnemonicParsing="false" onAction="#closeAllWindows" text="Close All" AnchorPane.rightAnchor="42.0" />
+            <Label layoutX="12.0" text="Model Status">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label fx:id="currentModelStatus2" alignment="TOP_LEFT" layoutX="254.0" layoutY="19.0" prefHeight="69.0" prefWidth="185.0" wrapText="true" AnchorPane.bottomAnchor="7.0" />
+            <Label fx:id="currentModelStatus3" alignment="TOP_LEFT" layoutX="469.0" layoutY="-1.0" prefHeight="95.0" prefWidth="276.0" wrapText="true" />
+            <Label fx:id="currentModelStatus1" alignment="TOP_LEFT" layoutX="12.0" layoutY="40.0" prefHeight="29.0" prefWidth="185.0" wrapText="true" />
+            <Label fx:id="currentModelStatus0" alignment="TOP_LEFT" layoutX="12.0" layoutY="19.0" prefHeight="29.0" prefWidth="185.0" wrapText="true" />
+         </children></AnchorPane>
+   </bottom>
+   <center>
+      <LineChart fx:id="lineChart" prefHeight="541.0" prefWidth="700.0" visible="false" BorderPane.alignment="CENTER">
+        <xAxis>
+          <NumberAxis side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </center>
+   <right>
+      <ListView fx:id="listOfWindows" prefHeight="534.0" prefWidth="129.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <AnchorPane prefHeight="537.0" prefWidth="103.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="5.0" layoutY="30.0" text="Details">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="details" alignment="TOP_LEFT" layoutX="5.0" layoutY="69.0" prefHeight="449.0" prefWidth="102.0" text="0. Data Loading&#10;&#10;Choose an input file." wrapText="true" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
