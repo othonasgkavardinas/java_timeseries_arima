@@ -254,7 +254,7 @@ public class Visualizer {
 		barChart.getData().add(series);
 
 		for(Node n: barChart.lookupAll(".chart-bar"))
-            n.setStyle("-fx-bar-fill: tomato;");
+            n.setStyle("-fx-bar-fill: #85a5ea;");
 
 	    final LineChart<String, Number> lineChart = new LineChart<>(xAxis, yAxis);
 		lineChart.setTitle(title);
@@ -351,7 +351,7 @@ public class Visualizer {
         barChart.setAnimated(false);
 
 		for(Node n: barChart.lookupAll(".chart-bar"))
-            n.setStyle("-fx-bar-fill: tomato;");
+            n.setStyle("-fx-bar-fill: #85a5ea;");
 
 	    final LineChart<String, Number> lineChart = new LineChart<>(xAxis, yAxis);
 		lineChart.setTitle(title);
