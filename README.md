@@ -1,5 +1,5 @@
 # java_timeseries_arima
-
+Ανάπτυξη Λογισμικού 1 (Με το Νίκο)  
 Java application that supports TimeSeries ARIMA modeling, and forecasting.
 
 ## Supported input files
