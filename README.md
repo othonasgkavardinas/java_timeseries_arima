@@ -5,8 +5,6 @@
 - Δημιουργία εύχρηστης γραφικής διεπαφής για τη διαχείριση της εφαρμογής και παρουσίαση του τρόπου χρήσης της  
 
 ## Supported input files
-This application supports the loading of two file types.
-
 ### UCR file
 A file that contains a TimeSeries as a row, in which the first value is a classification label.
 (These files were found in UCR Achive 2018)
