@@ -1,8 +1,8 @@
 # java_timeseries_arima
-## Java application that supports TimeSeries ARIMA modeling, and forecasting.
-- Χρήση έτοιμων βιβλιοθηκών και κώδικα σε γλώσσα Java για δημιουργία εφαρμογής πρόβλεψης χρονοσειρών με μοντέλα ARIMA.  
-- Έλεγχος ορθής λειτουργίας της εφαρμογής.  
-- Δημιουργία εύχρηστης γραφικής διεπαφής για τη διαχείριση της εφαρμογής και παρουσίαση του τρόπου χρήσης της.  
+## Java application that supports TimeSeries ARIMA modeling, and forecasting
+- Χρήση έτοιμων βιβλιοθηκών και κώδικα σε γλώσσα Java για δημιουργία εφαρμογής πρόβλεψης χρονοσειρών με μοντέλα ARIMA  
+- Έλεγχος ορθής λειτουργίας της εφαρμογής  
+- Δημιουργία εύχρηστης γραφικής διεπαφής για τη διαχείριση της εφαρμογής και παρουσίαση του τρόπου χρήσης της  
 
 ## Supported input files
 This application supports the loading of two file types.
